@@ -7,15 +7,17 @@ function assert(name,msg,exspected,functon,input){
     }
 
     var output = "";
+    var color = "green";
 
     if( exspected == result ){
         output = " - " + name;
     }
     else{
         output = " x " + name + "\n" + "\t" + exspected + " != " + result + "\n\t" + msg;
+        color = "red";
     }
 
-    console.log(output)
+    console.log("%c" + output , 'color: ' + color);
 }
 
 assert(
@@ -129,4 +131,28 @@ assert(
     "<ul>\n<li>Test</li>\n<li>Test2</li>\n<li>Test3</li>\n<li>Test4</li>\n</ul>\n<br>\n<p>Para</p>\n<br>",
     dagmar.parse,
     "*Test\n*Test2\n*Test3\n*Test4\nPara"
+);
+
+assert(
+    "Parse ol with one element",
+    "* should be paresed to odered list",
+    "<ol>\n<li value='1'>Test</li>\n</ol>\n<br>",
+    dagmar.parse,
+    "1. Test"
+);
+
+assert(
+    "Parse ol with two element",
+    "* should be paresed to odered list",
+    "<ol>\n<li value='1'>Test</li>\n<li value='2'>Test 2</li>\n</ol>\n<br>",
+    dagmar.parse,
+    "1. Test\n 2.Test 2"
+);
+
+assert(
+    "Parse ol with multiple items with odd numbering",
+    "* should be paresed to odered list",
+    "<ol>\n<li value='1'>Test</li>\n<li value='3'>Test2</li>\n<li value='5'>Test4</li>\n</ol>\n<br>",
+    dagmar.parse,
+    "1. Test \n 3. Test2 \n 5.Test4"
 );

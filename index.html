@@ -7,11 +7,14 @@
 <script src="dagmar.js"></script>
 <script src="tests.js"></script>
 <p id="in">
-#Test
-
-    test
-    ##test2
-    tes#
+1.Test
+    2. Dette er 3. også en 4. test
+    4 test
+    4 . test
+    2. test
 </p>
+<script>
+    document.write(dagmar.parse(document.getElementById("in").innerHTML));
+</script>
 </body>
 </html>
