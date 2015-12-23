@@ -23,7 +23,7 @@ function assert(name,msg,exspected,functon,input){
 assert(
     "Parse empty string",
     "Empty strings should be returned",
-    "<p></p>\n<br>",
+    "<p></p>",
     dagmar.parse,
     ""
 );
@@ -31,7 +31,7 @@ assert(
 assert(
     "Parse H1",
     "# shuld be parsed to H1",
-    "<h1>Test</h1><br>",
+    "<h1>Test</h1>",
     dagmar.parse,
     "#Test"
 );
@@ -39,7 +39,7 @@ assert(
 assert(
     "Parse H2",
     "## shuld be parsed to H2",
-    "<h2>Test</h2><br>",
+    "<h2>Test</h2>",
     dagmar.parse,
     "##Test"
 );
@@ -47,7 +47,7 @@ assert(
 assert(
     "Parse H3",
     "## shuld be parsed to H3",
-    "<h3>Test</h3><br>",
+    "<h3>Test</h3>",
     dagmar.parse,
     "###Test"
 );
@@ -55,7 +55,7 @@ assert(
 assert(
     "Parse H4",
     "#### shuld be parsed to H4",
-    "<h4>Test</h4><br>",
+    "<h4>Test</h4>",
     dagmar.parse,
     "####Test"
 );

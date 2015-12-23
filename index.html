@@ -6,12 +6,17 @@
 </head>
 <script src="dagmar.js"></script>
 <script src="tests.js"></script>
-<p id="in">
+<p style="display: none" id="in">
+#Overskrift
 1.Test
-    2. Dette er 3. også en 4. test
-    4 test
-    4 . test
-    2. test
+2. Dette er 3. også en 4. test
+3.test
+4 . test
+2. test
+
+*element 1
+*element 2
+*element3
 </p>
 <script>
     document.write(dagmar.parse(document.getElementById("in").innerHTML));

@@ -93,7 +93,7 @@ var dagmar = function (){
             else{
                 output += "<p>" + line + "</p>\n";
             }
-            output += "<br>\n";
+            output += "\n";
         }
         return output.trim();
     }
